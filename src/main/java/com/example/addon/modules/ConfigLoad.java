@@ -14,7 +14,7 @@ public class ConfigLoad extends Module {
     public static ConfigLoad INSTANCE;
 
     public ConfigLoad() {
-        super(com.example.addon.LBLTAddon.CATEGORY, "ConfigLoad", "加载各个客户端的配置");
+        super(com.example.addon.LBLTAddon.CATEGORY, "ConfigLoad", "If you have multiple clients installed in Minecraft, this module can load all their configurations at the same time.");
         INSTANCE = this;
     }
 

@@ -14,7 +14,7 @@ public class ConfigSave extends Module {
     public static ConfigSave INSTANCE;
 
     public ConfigSave() {
-        super(com.example.addon.LBLTAddon.CATEGORY, "ConfigSave", "保存各个客户端的配置");
+        super(com.example.addon.LBLTAddon.CATEGORY, "ConfigSave", "If you have multiple clients installed in Minecraft, this module can save the configs for all of them at the same time.");
         INSTANCE = this;
     }
 

@@ -3,6 +3,7 @@ package com.example.addon;
 import com.example.addon.modules.ConfigLoad;
 import com.example.addon.modules.ConfigSave;
 import com.example.addon.modules.FriendsManager;
+import com.example.addon.modules.Personalized;
 import com.mojang.logging.LogUtils;
 import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
@@ -23,6 +24,7 @@ public class LBLTAddon extends MeteorAddon {
         add(new FriendsManager());
         add(new ConfigSave());
         add(new ConfigLoad());
+        add(new Personalized());
     }
 
     private void add(Module module) {
