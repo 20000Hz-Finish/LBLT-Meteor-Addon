@@ -9,7 +9,7 @@ public class Burrow extends Module {
 
     @Override
     public void onActivate() {
-        mc.player.networkHandler.sendChatCommand("burrow");
+        mc.player.connection.sendCommand("burrow");
         toggle();
     }
 }

@@ -13,6 +13,9 @@
   "entrypoints": {
     "meteor": [
       "com.example.addon.LBLTAddon"
+    ],
+    "client": [
+      "com.example.addon.music.MusicClientInitializer"
     ]
   },
   "mixins": [
@@ -29,6 +32,7 @@
   "depends": {
     "java": ">=21",
     "minecraft": "${mc_version}",
+    "fabric-api": "*",
     "meteor-client": "*"
   }
 }

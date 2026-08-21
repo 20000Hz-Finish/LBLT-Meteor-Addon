@@ -10,13 +10,6 @@ public class Personalized extends Module {
 
     private final SettingGroup sgGeneral = this.settings.getDefaultGroup();
 
-    public final Setting<Boolean> titleInterface = sgGeneral.add(new BoolSetting.Builder()
-        .name("Title Interface")
-        .description("自定义 Minecraft 主界面")
-        .defaultValue(true)
-        .build()
-    );
-
     public final Setting<Boolean> meteorGuiBackground = sgGeneral.add(new BoolSetting.Builder()
         .name("Meteor GUI BackGround")
         .description("自定义 Meteor GUI 背景")
@@ -35,7 +28,6 @@ public class Personalized extends Module {
     public Personalized() {
         super(com.example.addon.LBLTAddon.CATEGORY, "Personalized", "Personalize your client.");
         INSTANCE = this;
-        runInMainMenu = true;
     }
 
     public void ensureActive() {

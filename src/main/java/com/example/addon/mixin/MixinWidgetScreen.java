@@ -4,8 +4,8 @@ import com.example.addon.modules.Personalized;
 import meteordevelopment.meteorclient.gui.WidgetScreen;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.utils.Utils;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 import org.lwjgl.opengl.GL13;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,10 +16,10 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 @Mixin(WidgetScreen.class)
 public abstract class MixinWidgetScreen {
-    private static final Identifier BACKGROUND = Identifier.of("lblt", "gui/background.png");
+    private static final ResourceLocation BACKGROUND = ResourceLocation.fromNamespaceAndPath("lblt", "gui/background.png");
 
     @Inject(method = "onRenderBefore", at = @At("HEAD"), remap = false)
-    private void lblt$onRenderBefore(DrawContext context, float delta, CallbackInfo ci) {
+    private void lblt$onRenderBefore(GuiGraphics context, float delta, CallbackInfo ci) {
         Personalized personalized = Personalized.INSTANCE;
         if (personalized == null || !personalized.isActive() || !personalized.meteorGuiBackground.get()) return;
 
@@ -36,7 +36,7 @@ public abstract class MixinWidgetScreen {
         RenderSystem.enableDepthTest();
         GL13.glEnable(32925);
         RenderSystem.setShaderTexture(0, BACKGROUND);
-        context.drawTexture(BACKGROUND, offsetX, offsetY, scaledWidth, scaledHeight, 0.0F, 0.0F, 3840, 2160, 3840, 2160);
+        context.blit(BACKGROUND, offsetX, offsetY, scaledWidth, scaledHeight, 0, 0, 3840, 2160, 3840, 2160);
         GL13.glDisable(32925);
         RenderSystem.disableBlend();
         RenderSystem.disableDepthTest();

@@ -22,8 +22,15 @@ repositories {
 dependencies {
     // Fabric
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // QR-code generation used by the music login screen.
+    include(implementation("com.google.zxing:core:${project.zxing_version}"))
+    include(implementation("com.googlecode.soundlibs:mp3spi:${project.mp3spi_version}"))
+    include(implementation("com.googlecode.soundlibs:jlayer:${project.jlayer_version}"))
+    include(implementation("com.googlecode.soundlibs:tritonus-share:${project.tritonus_version}"))
 
     // Meteor
     modImplementation "meteordevelopment:meteor-client:${project.meteor_version}"

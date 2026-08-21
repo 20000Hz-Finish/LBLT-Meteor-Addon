@@ -138,6 +138,6 @@ public class ConfigSave extends Module {
         if (deBug.get()) {
             info("执行: " + command);
         }
-        mc.player.networkHandler.sendChatMessage(command);
+        mc.player.connection.sendChat(command);
     }
 }

@@ -10,6 +10,6 @@ import java.util.List;
 @Mixin(Friends.class)
 public interface IFriend {
 
-    @Accessor("friends")
+    @Accessor(value = "friends", remap = false)
     List<Friend> getFriends();
 }
